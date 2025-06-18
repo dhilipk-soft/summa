@@ -1,0 +1,41 @@
+/* Header style */
+p {
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 15px;
+}
+
+/* Container styling */
+.table {
+  max-width: 500px;
+  margin-top: 10px;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  padding: 15px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+/* Remove default UL styling */
+.table ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+/* Each designation item */
+.table li {
+  padding: 10px 15px;
+  margin-bottom: 10px;
+  background-color: #eef3ff;
+  border: 1px solid #d0d7ff;
+  border-radius: 6px;
+  color: #333;
+  font-weight: 500;
+  transition: background-color 0.2s ease;
+}
+
+/* Hover effect */
+.table li:hover {
+  background-color: #dbe5ff;
+  cursor: default;
+}

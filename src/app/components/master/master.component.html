@@ -1,1 +1,11 @@
 <p>master works!</p>
+
+<div>
+    <button (click)="checkCurrent('roles')">Roles</button>
+    <button (click)="checkCurrent('destinations')">Destinations</button>
+</div>
+
+<div>
+    <app-roles *ngIf="currentComponent === 'roles'"></app-roles>
+    <app-destinations *ngIf="currentComponent === 'destinations'"></app-destinations>
+</div>

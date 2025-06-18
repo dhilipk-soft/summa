@@ -1,0 +1,101 @@
+<div class="client">
+    <div class="clientcol1">
+        <div class="col1cart">
+            <div class="clientcartheader">
+                Client List
+            </div>
+            <div class="clientcartbody">
+                <div class="cartbodycol">
+                    <table class="carttable" >
+                        <thead>
+                            <tr>
+                                <td>Sr No</td>
+                                <td>Contact Person</td>
+                                <td>Company Name</td>
+                                <td>Address</td>
+                                <td>City</td>
+                                <td>Pincode</td>
+                                <td>State   </td>
+                                <td>Action</td>
+                            </tr>
+                        </thead>
+                        
+                        <tbody >
+                            <tr *ngFor="let client of clientList;let i = index">
+                                <td>{{i+1}}</td>
+                                <td>{{client.contactPersonName}}</td>
+                                <td>{{client.companyName}}</td>
+                                <td>{{client.address}}</td>
+                                <td>{{client.city}}</td>
+                                <td>{{client.pincode}}</td>
+                                <td>{{client.state}}</td>
+                                <td>
+                                    <button class="btn btn-primary" (click)="onEditClient(client)">Edit</button>
+                                    <button class="btn btn-danger" (click)="onDeleteClient(client.clientId)">Delete</button>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="clientcol2">
+        <div class="col2cart">
+            <div class="col2header">
+                New Client
+            </div>
+            <div class="col2body">
+                <div class="col2cart">
+                    <div class="col2row">
+                        <div class="col2field">
+                            <label for="">Contact Person Name: </label>
+                            <input type="text" [(ngModel)]="clientObj.contactPersonName" name="" id="">
+                        </div>
+                        <div class="col2field">
+                            <label for="">Company Name: </label>
+                            <input type="text" [(ngModel)]="clientObj.companyName" name="" id="">
+                        </div>
+                        <div class="col2field">
+                            <label for="">Address: </label>
+                            <input type="address" [(ngModel)]="clientObj.address" name="" id="">
+                        </div>
+                        <div class="col2field">
+                            <label for="">City: </label>
+                            <input type="text" [(ngModel)]="clientObj.city" name="" id="">
+                        </div>
+                        <div class="col2field">
+                            <label for="">Pincode: </label>
+                            <input type="text" [(ngModel)]="clientObj.pincode" name="" id="">
+                        </div>
+                        <div class="col2field">
+                            <label for="">State: </label>
+                            <input type="text" [(ngModel)]="clientObj.state" name="" id="">
+                        </div>
+                        <div class="col2field">
+                            <label for="">Employee Strength: </label>
+                            <input type="text" [(ngModel)]="clientObj.employeeString" name="" id="">
+                        </div>
+                        <div class="col2field">
+                            <label for="">GST No: </label>
+                            <input type="text" [(ngModel)]="clientObj.gstNo" name="" id="">
+                        </div>
+                        <div class="col2field">
+                            <label for="">Contact No: </label>
+                            <input type="text" [(ngModel)]="clientObj.contactNo" name="" id="">
+                        </div>
+                        <div class="col2field">
+                            <label for="">Reg No: </label>
+                            <input type="text" [(ngModel)]="clientObj.regNo" name="" id="">
+                        </div>
+                    </div>
+                    <div class="col2rowb">
+                        <div class="col2fieldb">
+                            <button class="btn btn-primary" (click)="onSaveClient()">Save</button>
+                            <button class="btn btn-secondary">Cancel</button>
+                        </div>     
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

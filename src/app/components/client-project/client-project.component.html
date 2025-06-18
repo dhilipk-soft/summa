@@ -1,0 +1,130 @@
+<div class="client">
+    <div class="clientcol1">
+        <div class="col1cart">
+            <div class="clientcartheader">
+                Client List
+            </div>
+            <div class="clientcartbody">
+                <div class="cartbodycol">
+                    <table class="carttable">
+                        <thead>
+                            <tr>
+                                <td>Sr No</td>
+                                <td>Employee Name</td>
+                                <td>Employee Code</td>
+                                <td>EmailId</td>
+                                <td>Designation</td>
+                                <td>ProjectName</td>
+                                <td>startDate </td>
+                                <td>Expected EndDate</td>
+                                <td>Client Name</td>
+                                <td>Action</td>
+                            </tr>
+                        </thead>
+                            
+                                @for (item of clientProjectList; track $index) {
+                                    <tr>
+                                        <td>{{ $index + 1 }}</td>
+                                        <td>{{ item.empName }}</td>
+                                        <td>{{ item.empCode }}</td>
+                                        <td>{{ item.empEmailId }}</td>
+                                        <td>{{ item.empDesignation }}</td>
+                                        <td>{{ item.projectName }}</td>
+                                        <td>{{ item.startDate }}</td>
+                                        <td>{{ item.expectedEndDate }}</td>
+                                        <td>{{ item.clientName }}</td>
+                                        <td>
+                                            <button class="btn btn-primary">Edit</button>
+                                            <button class="btn btn-danger">Delete</button>
+                                        </td>
+                                    </tr>
+                                }
+                        <tbody>
+                            <tr>
+                                
+                                <td>
+                                    <button class="btn btn-primary">Edit</button>
+                                    <button class="btn btn-danger">Delete</button>
+                                </td>
+                            </tr>
+
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="clientcol2">
+        <div class="col2cart">
+            <div class="col2header">
+                New Client
+            </div>
+            <div class="col2body">
+                <form [formGroup]="projectForm">
+                    <div class="col2row">
+                        <div class="col2field">
+                            <label for="">ProjectName:</label>
+                            <input type="text" formControlName="projectName" name="" id="">
+                        </div>
+                        <div class="col2field">
+                            <label for="">Start Date: </label>
+                            <input type="date" formControlName="startDate" name="" id="">
+                        </div>
+                        <div class="col2field">
+                            <label for="">Expected End Date: </label>
+                            <input type="date" formControlName="expectedEndDate" name="" id="">
+                        </div>
+                        <div class="col2field">
+                            <label for="">Contact Person: </label>
+                            <input type="text" formControlName="contactPerson" name="" id="">
+                        </div>
+                        <div class="col2field">
+                            <label for="">Contact No: </label>
+                            <input type="text" formControlName="contactPersonContactNo" name="" id="">
+                        </div>
+                        <div class="col2field">
+                            <label for="">Contact Email: </label>
+                            <input type="text" formControlName="contactPersonEmailId" name="" id="">
+                        </div>
+                        <div class="col2field">
+                            <label for="">Total Employee Count: </label>
+                            <input type="text" formControlName="totalEmpWorking" name="" id="">
+                        </div>
+                        <div class="col2field">
+                            <label for="">Project Costing: </label>
+                            <input type="text" formControlName="projectCost" name="" id="">
+                        </div>
+                        <div class="col2field">
+                            <label for="">Project Description: </label>
+                            <input type="text" formControlName="projectDetails" name="" id="">
+                        </div>
+                        <div class="col2field">
+                            <label for="">Select Client </label>
+                            <select formControlName="clientId" name="" id="">
+                                <option value="">Select Client</option>
+                                @for (item of clientList; track $index) {
+                                    <option [value]="item.clientId">{{ item.companyName }} </option>
+                                }
+                            </select>
+                        </div>
+                        <div class="col2field">
+                            <label for="">Lead by: </label>
+                            <select formControlName="leadByEmpId" name="" id="">
+                                <option value="active">Select Employee</option>
+                                @for (item of employeeList; track $index) {
+                                    <option [value]="item.empId">{{ item.empName }} -  {{item.empId}}</option>
+                                }
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col2rowb">
+                        <div class="col2fieldb">
+                            <button class="btn btn-primary" (click)="onSaveClientProject()">Save</button>
+                            <button class="btn btn-secondary">Cancel</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
